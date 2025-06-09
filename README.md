@@ -9,14 +9,26 @@
 </p>
 
 <p align="center">
-  <a href="https://crates.io/crates/fire-wallet-cli">
-    <img src="https://img.shields.io/crates/v/fire-wallet-cli?style=for-the-badge&color=firebrick" alt="Crate version" />
-  </a>
-  <a href="https://github.com/guilhermelimaweb3/firewallet/blob/main/LICENSE.md">
-    <img src="https://img.shields.io/badge/license-FireChain-red?style=for-the-badge" alt="License: FireChain" />
-  </a>
-  <img src="https://img.shields.io/badge/clean%20code-✓-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/f1r3%20address-supported-orange?style=for-the-badge" />
+  <!-- 🔥 Nome + versão -->
+  <img src="https://img.shields.io/badge/Fire%20Wallet%20CLI-v0.1.0-orange?style=flat-square&logo=firefox-browser&logoColor=white" alt="Versão" />
+
+  <!-- 🔐 Licença personalizada -->
+  <img src="https://img.shields.io/badge/Licença-FireChain%20Dual-red?style=flat-square&logo=scale&logoColor=white" alt="Licença FireChain Dual" />
+
+  <!-- 🔒 Criptografia avançada -->
+  <img src="https://img.shields.io/badge/Criptografia-SECP256k1%20%7C%20SHA256%20%7C%20RIPEMD160-blue?style=flat-square&logo=keycdn&logoColor=white" alt="Criptografia avançada" />
+
+  <!-- ⚙️ Geração Local -->
+  <img src="https://img.shields.io/badge/100%25%20Offline-Sem%20rede%20ou%20cache-6A5ACD?style=flat-square&logo=wifi-off&logoColor=white" alt="Offline" />
+
+  <!-- 🧼 Clean Code -->
+  <img src="https://img.shields.io/badge/Clean%20Code-✓-green?style=flat-square&logo=codefactor&logoColor=white" alt="Código limpo" />
+
+  <!-- 🔥 Endereço FireChain -->
+  <img src="https://img.shields.io/badge/f1r3%20address-Suportado-F28500?style=flat-square&logo=flame&logoColor=white" alt="FireChain Address" />
+
+  <!-- 🛡️ Proteção institucional -->
+  <img src="https://img.shields.io/badge/Proteção%20Institucional-Zero%20vazamento-critical?style=flat-square&logo=shield&logoColor=white" alt="Proteção total" />
 </p>
 
 ---
