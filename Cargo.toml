@@ -1,0 +1,39 @@
+[package]
+name = "fire-wallet-cli"
+version = "0.1.0"
+edition = "2021"
+authors = ["Guilherme Lima"]
+description = "🔥 Fire Wallet CLI – Geração de carteiras FireChain com segurança, UX premium e clean code."
+license = "MIT"
+repository = "https://github.com/firechainmainnet/fire-wallet-cli"
+readme = "README.md"
+keywords = ["wallet", "cli", "firechain", "blockchain"]
+categories = ["cryptography", "command-line-utilities"]
+default-run = "fire-wallet-cli"
+
+# ────────────────────────────────────────────────────────────────
+# ▶️ Binário principal da aplicação
+# ────────────────────────────────────────────────────────────────
+[[bin]]
+name = "fire-wallet-cli"
+path = "src/bin/main.rs"
+
+# ────────────────────────────────────────────────────────────────
+# 🔐 DEPENDÊNCIAS ESSENCIAIS – Para geração de carteiras FireChain
+# ────────────────────────────────────────────────────────────────
+[dependencies]
+
+# 🎛️ Interface de linha de comando com UX profissional
+clap = { version = "4.5", features = ["derive"] }
+colored = "2.0"
+
+# 🔐 Hashing e encoding de endereço FireChain
+sha2 = "0.10"                         # SHA-256
+ripemd = "0.1"                        # RIPEMD-160
+tiny-keccak = { version = "2.0", features = ["keccak"] } # KECCAK-256
+bs58 = "0.5"                          # Base58 encoding
+hex = "0.4"                           # Conversões hex <-> bytes
+
+# 🔑 Geração de chaves privadas/públicas SECP256k1
+rand = "0.8"
+secp256k1 = { version = "0.24", features = ["rand"] }

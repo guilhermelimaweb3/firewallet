@@ -1,0 +1,61 @@
+# 🔐 Chaves e dados sensíveis
+*.key
+*.pem
+*.env
+*.secrets
+*.keystore
+*.p12
+*.json.secret
+
+# 🔒 Chaves SSH (por segurança)
+*.pub
+id_*
+
+# ⚙️ Arquivos temporários / de build
+*.log
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+*.lock
+
+# ⚙️ Diretórios e cache
+target/
+node_modules/
+dist/
+build/
+.cache/
+out/
+*.sqlite
+*.sqlite3
+
+# 📦 Rust / Cargo (se usar em algum módulo)
+Cargo.lock
+
+# 💻 Sistemas
+Thumbs.db
+ehthumbs.db
+*.lnk
+
+# 📂 IDEs e editores
+.vscode/
+.idea/
+*.code-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# 🔄 Arquivos do GitHub CLI
+.gh/
+
+# 🧪 Testes
+*.coverage
+*.test.*
+
+# 🧼 Arquivos pessoais
+*.iml
+*.local
+
+wallets/
+backup/
