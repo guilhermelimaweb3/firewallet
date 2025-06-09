@@ -114,12 +114,12 @@ firewallet/
 
 ## 📄 Licença 🔐
 
-Este projeto é distribuído sob a **Licença FireChain Pessoal**:
+Distribuído sob a **Licença FireChain Dual**:
 
-- ✅ **Permitido**: uso pessoal, educacional, estudos, pesquisas e auditorias.
-- ❌ **Proibido**: uso comercial, revenda, distribuição lucrativa, incorporação em produtos pagos ou monetização de qualquer forma.
+- ✅ Uso gratuito e pessoal para estudos, autocustódia e aprendizado
+- 💼 Uso comercial **mediante autorização e contrato**
 
-> Leia o arquivo [LICENSE.md](./LICENSE.md) para os termos completos.
+[Leia os termos completos aqui →](./LICENSE.md)
 
 ---
 
