@@ -139,8 +139,8 @@ Saída esperada:
 Após o build, copie o binário para uma pasta global:
 
 ```powershell
-copy .	arget
-eleaseire-wallet-cli.exe C:\Tools$env:PATH += ";C:\Tools"
+copy .\target\release\fire-wallet-cli.exe C:\Tools\
+$env:PATH += ";C:\Tools\"
 ```
 
 Agora você pode rodar de qualquer lugar:
