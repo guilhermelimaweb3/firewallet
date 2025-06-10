@@ -1,3 +1,4 @@
+
 <p align="center">
   <img src="assets/banner.png" alt="Fire Wallet CLI Banner" />
 </p>
@@ -49,10 +50,10 @@ Construído com foco em:
 
 Etapas determinísticas e auditáveis:
 
-1. 📤 Chave pública → SHA256 → RIPEMD160
-2. 🧱 Aplicação do prefixo institucional fixo `[0x15, 0x67]` (derivado para gerar "f1" via Base58Check)
-3. ✅ Cálculo do checksum: SHA256(SHA256(payload)) → primeiros 4 bytes
-4. 🔁 Codificação final em Base58Check
+1. 📤 Chave pública → SHA256 → RIPEMD160  
+2. 🧱 Aplicação do prefixo institucional fixo `[0x15, 0x67]` (derivado para gerar "f1" via Base58Check)  
+3. ✅ Cálculo do checksum: SHA256(SHA256(payload)) → primeiros 4 bytes  
+4. 🔁 Codificação final em Base58Check  
 
 🔗 Resultado: Endereço FireChain com prefixo garantido `f1...` (ex: `f1kWx6pQ9HkEM...`)
 
@@ -62,9 +63,9 @@ Etapas determinísticas e auditáveis:
 
 Ao contrário de sistemas tradicionais (como Ethereum ou Bitcoin) onde o prefixo do endereço é herdado automaticamente do tipo de rede, **a FireChain introduz uma padronização visual e técnica no endereço institucional `f1...`**, garantindo:
 
-- ✅ Identidade visual única e exclusiva para o ecossistema FireChain
-- ✅ Validação rápida, simples e humana de endereços válidos
-- 🔐 Determinismo confiável sem customização ou tentativa/erro
+- ✅ Identidade visual única e exclusiva para o ecossistema FireChain  
+- ✅ Validação rápida, simples e humana de endereços válidos  
+- 🔐 Determinismo confiável sem customização ou tentativa/erro  
 - 🚫 Nenhum uso de REST, backends ou servidores
 
 Esse modelo segue os princípios da descentralização real e identidade de rede — reforçando a FireChain como infraestrutura institucional de autocustódia digital.
@@ -109,54 +110,60 @@ cargo build --release
 > Requer: Rust 1.70+ instalado
 
 ---
+
 🧪 COMO USAR — FIRE WALLET CLI
 ==============================
 
 1. 🔧 Gerar uma nova carteira FireChain
 
-    Comando:
-    --------
-    fire-wallet-cli new
+Comando:
+```bash
+fire-wallet-cli new
+```
 
-    Saída esperada:
-    ---------------
-    🔥 Fire Wallet CLI
-    🔐 Carteira FireChain local e segura — Geração instantânea com endereço f1...
+Saída esperada:
+```
+🔥 Fire Wallet CLI
+🔐 Carteira FireChain local e segura — Geração instantânea com endereço f1...
 
-    🆔 Fingerprint: 8A62D8A9CC23B0F1   # Hash visual da chave pública
-    🧠 Chave Pública: 04A1...          # Chave SECP256k1 (formato uncompressed)
-    🔒 Chave Privada: 22C4...          # Exportável apenas localmente
-    🔥 Endereço FireChain: f1kWx6p...  # Endereço institucional prefixado "f1"
+🆔 Fingerprint: 8A62D8A9CC23B0F1   # Hash visual da chave pública
+🧠 Chave Pública: 04A1...          # Chave SECP256k1 (formato uncompressed)
+🔒 Chave Privada: 22C4...          # Exportável apenas localmente
+🔥 Endereço FireChain: f1kWx6p...  # Endereço institucional prefixado "f1"
+```
 
 ---
 
 2. 🌍 Tornar o CLI acessível globalmente (Windows)
 
-    Após o build, copie o binário para uma pasta global:
+Após o build, copie o binário para uma pasta global:
 
-    Comando:
-    --------
-    copy .\target\release\fire-wallet-cli.exe C:\Tools\
-    $env:PATH += ";C:\Tools\"
+```powershell
+copy .	arget
+eleaseire-wallet-cli.exe C:\Tools$env:PATH += ";C:\Tools"
+```
 
-    Agora você pode rodar de qualquer lugar:
+Agora você pode rodar de qualquer lugar:
 
-    fire-wallet-cli new
+```bash
+fire-wallet-cli new
+```
 
 ---
 
 3. 📂 Local padrão do binário gerado
 
-    - Windows: .\target\release\fire-wallet-cli.exe
-    - Linux/macOS: ./target/release/fire-wallet-cli
+- Windows: .\target\release\fire-wallet-cli.exe  
+- Linux/macOS: ./target/release/fire-wallet-cli
 
 ---
 
 4. 💡 Dica institucional (futuro)
 
-    Em breve será possível gerar saídas estruturadas com:
+Em breve será possível gerar saídas estruturadas com:
 
-    fire-wallet-cli export --json
+```bash
+fire-wallet-cli export --json
 ```
 
 ---
@@ -184,7 +191,6 @@ firewallet/
 │   └── find_prefix.rs         # 🔍 Scanner institucional para prefixos binários
 │
 ├── target/                    # ⚙️ Diretório de build (ignorado pelo Git)
-│
 ├── .gitignore                 # 🚫 Regras de exclusão do Git (ex: wallets, builds)
 ├── Cargo.toml                 # 🛠️ Manifesto do projeto Rust (metadados e deps)
 ├── Cargo.lock                 # 🔒 Lockfile do Cargo (versões exatas)
