@@ -30,11 +30,11 @@ impl Wallet {
         let priv_hex = hex::encode(secret_key.secret_bytes());
         let pub_hex = hex::encode(public_key.serialize_uncompressed());
 
-        // 🆔 Fingerprint: primeiros 6 bytes do SHA256 da chave pública
+        // 🆔 Fingerprint: primeiros 8 bytes do SHA256 da chave pública
         let mut hasher = Sha256::new();
         hasher.update(&public_key.serialize_uncompressed());
         let result = hasher.finalize();
-        let fingerprint = hex::encode(&result[..3]).to_uppercase(); // 6 caracteres hexadecimais
+        let fingerprint = hex::encode(&result[..8]).to_uppercase(); // 🔐 Agora 8 bytes (16 caracteres hex)
 
         // 🔥 Derivação do endereço FireChain (f1r3)
         let fire_address = derive_fire_address_from_pubkey(&public_key.serialize_uncompressed())?;
