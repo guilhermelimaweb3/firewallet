@@ -41,6 +41,9 @@ tiny-keccak = { version = "2.0", features = ["keccak"] } # KECCAK-256
 bs58 = "0.5"                          # Base58 encoding
 hex = "0.4"                           # Conversões hex <-> bytes
 
+# 🔏 Assinaturas e codificação de payloads
+base64 = "0.22"
+
 # 🔑 Geração de chaves privadas/públicas SECP256k1
 rand = "0.8"
 secp256k1 = { version = "0.24", features = ["rand"] }

@@ -23,6 +23,8 @@ Este utilitário gera uma nova identidade FireChain com:
 
   $ fire-wallet-cli new --password "senhaForteAqui"
   $ fire-wallet-cli open --file f1ABCDEF.wallet --password "senhaForteAqui" --show-private
+  $ fire-wallet-cli sign --file f1ABCDEF.wallet --password "senhaForteAqui" --message "meu payload"
+  $ fire-wallet-cli verify --file f1ABCDEF.wallet --password "senhaForteAqui" --message "meu payload" --signature "base64..."
 
 Sem armazenamento, sem transmissão — tudo acontece localmente, com clean code e criptografia forte.
 "#
@@ -40,28 +42,59 @@ pub enum Command {
 
     /// 🔓 Abre e descriptografa uma carteira `.wallet` existente
     Open(OpenWalletArgs),
+
+    /// ✍️ Assina um payload com a chave privada da carteira
+    Sign(SignArgs),
+
+    /// ✅ Verifica a assinatura de um payload com a chave pública da carteira
+    Verify(VerifyArgs),
 }
 
-/// 🧾 Argumentos obrigatórios do comando `new`
+/// 🧾 Argumentos do comando `new`
 #[derive(Args, Debug)]
 pub struct NewWalletArgs {
-    /// 🔐 Senha para criptografar a carteira (obrigatória)
     #[arg(short, long, help = "Senha de proteção (usada na criptografia da carteira)", required = true)]
     pub password: String,
 }
 
-/// 🧾 Argumentos do comando `open`
+/// 🔍 Argumentos do comando `open`
 #[derive(Args, Debug)]
 pub struct OpenWalletArgs {
-    /// 📂 Caminho para o arquivo `.wallet` criptografado
-    #[arg(short, long, help = "Arquivo .wallet a ser lido e descriptografado", required = true)]
+    #[arg(short, long, help = "Caminho do arquivo .wallet", required = true)]
     pub file: String,
 
-    /// 🔐 Senha usada para descriptografar os dados
-    #[arg(short, long, help = "Senha utilizada para descriptografar o arquivo", required = true)]
+    #[arg(short, long, help = "Senha usada na criptografia", required = true)]
     pub password: String,
 
-    /// 👁️ Exibir a chave privada descriptografada (opcional e sensível)
-    #[arg(long, help = "Exibir a chave privada após descriptografar (use com cautela)")]
+    #[arg(long, help = "Exibir a chave privada na saída")]
     pub show_private: bool,
+}
+
+/// ✍️ Argumentos do comando `sign`
+#[derive(Args, Debug)]
+pub struct SignArgs {
+    #[arg(short, long, help = "Caminho do arquivo .wallet", required = true)]
+    pub file: String,
+
+    #[arg(short, long, help = "Senha usada na criptografia", required = true)]
+    pub password: String,
+
+    #[arg(short, long, help = "Payload a ser assinado", required = true)]
+    pub message: String,
+}
+
+/// ✅ Argumentos do comando `verify`
+#[derive(Args, Debug)]
+pub struct VerifyArgs {
+    #[arg(short, long, help = "Caminho do arquivo .wallet", required = true)]
+    pub file: String,
+
+    #[arg(short, long, help = "Senha usada na criptografia", required = true)]
+    pub password: String,
+
+    #[arg(short, long, help = "Payload original que foi assinado", required = true)]
+    pub message: String,
+
+    #[arg(short, long, help = "Assinatura Base64 gerada anteriormente", required = true)]
+    pub signature: String,
 }
